@@ -1,0 +1,23 @@
+#start {
+  @include app-bg;
+  height : 100%;
+
+  .upper-part {
+    width: $start-view-width;
+    height: $upper-part-height;
+    @include display-box-center;
+
+    .title {
+      font-size: 40px;
+    }
+  }
+  .downer-part {
+    width: $start-view-width;
+    height: $downer-part-height;
+    @include display-box-center;
+
+    .start-button {
+      font-size: 20px;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.icon-clock {
+  @include icon;
+  @include background-image(url(images/icons/icon_clock_alt.png));
+}
+
+.icon-uncleared {
+  @include icon;
+  @include background-image(url(images/icons/icon_box_empty.png));
+
+}
+
+.icon-cleared {
+  @include icon;
+  @include background-image(url(images/icons/icon_box_checked.png));
+
+}
+
+.icon-left-arrow {
+  height:20px;
+  width: 30px;
+  display: block;
+  position: relative;
+
+  &:before{
+    content: '';
+    height: 0;
+    width: 0;
+    display: block;
+    border: 10px transparent solid;
+    border-left-width: 0;
+    border-right-color: #333;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+
+  &:after{
+    content: '';
+    height: 7px;
+    width: 22px;
+    display: block;
+    background: #333;
+    position: absolute;
+    top: 7px;
+    right: 2px;
+  }
+}

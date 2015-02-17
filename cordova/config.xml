@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.gabageapps.numberplace" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>NP</name>
+    <content src="index.html" />
+    <access origin="*" />
+
+    <platform name="android">
+      <icon src="./www/images/launch-icons/android/mdpi.png" density="mdpi" />
+      <icon src="./www/images/launch-icons/android/hdpi.png" density="hdpi" />
+      <icon src="./www/images/launch-icons/android/xhdpi.png" density="xhdpi" />
+      <icon src="./www/images/launch-icons/android/xhdpi.png" density="xhdpi" />
+      <icon src="./www/images/launch-icons/android/xxhdpi.png" density="xxhdpi" />
+      <icon src="./www/images/launch-icons/android/xxxhdpi.png" density="xxxhdpi" />
+    </platform>
+
+    <preference name="Fullscreen" value="true" />
+    <preference name="Orientation" value="portrait" />
+</widget>

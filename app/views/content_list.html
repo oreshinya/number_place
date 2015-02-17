@@ -1,0 +1,21 @@
+<div id="content_list">
+  <ul>
+    <li v-repeat="puzzles" v-touch="tap: startPuzzle($index)">
+      <div class="left-wrapper">
+        Puzzle {{id}}
+      </div>
+      <div class="right-wrapper">
+        <div class="status">
+          <div v-class="
+            icon-cleared: cleared,
+            icon-uncleared: !cleared
+          "></div>
+        </div>
+        <div class="time">
+          <div class="icon-clock"></div>
+          {{time}}
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

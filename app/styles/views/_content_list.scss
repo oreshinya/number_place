@@ -1,0 +1,47 @@
+#content_list {
+  height : auto;
+  min-height: 100%;
+
+  ul {
+    list-style-type : none;
+    margin          : 0;
+    padding         : 0;
+
+    li {
+      @include app-bg;
+      @include display-box-justify;
+      font-size : 18px;
+      height    : 50px;
+      box-shadow: 0 0 10px #696969;
+      margin: 0 auto;
+
+      .left-wrapper {
+        width: 40%;
+        padding-left: 30px;
+        font-size: 15px;
+        font-weight: bold;
+      }
+      .right-wrapper {
+        @include display-box-justify;
+        width: 50%;
+        margin-bottom: -5px;
+
+        .status {
+          width: 40%;
+          text-align: right;
+        }
+        .time {
+          width: 50%;
+          white-space: nowrap;
+          overflow: hidden;
+          font-size: 15px;
+
+          .icon-clock {
+            margin-bottom: -2px;
+            margin-right: 3px;
+          }
+        }
+      }
+    }
+  }
+}

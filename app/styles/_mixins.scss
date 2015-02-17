@@ -1,0 +1,24 @@
+@mixin display-box-center {
+  @include display-box;
+  @include box-pack(center);
+  @include box-align(center);
+}
+
+@mixin display-box-justify {
+  @include display-box;
+  @include box-pack(justify);
+  @include box-align(center);
+}
+
+
+
+@mixin app-bg {
+  @include background-image(linear-gradient(top left, #FFFFFF 0%, #DEEDEF 100%));
+}
+
+@mixin icon {
+  @include background-size(16px 16px);
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}

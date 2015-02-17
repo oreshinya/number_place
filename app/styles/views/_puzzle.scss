@@ -1,0 +1,91 @@
+$puzzle-flame-size: 30px;
+$puzzle-border-width: 1px;
+$puzzle-border-width-bold: $puzzle-border-width * 2;
+$puzzle-wrapper-width: $puzzle-flame-size * 9 + $puzzle-border-width * 6 + ($puzzle-border-width-bold) * 4;
+$puzzle-number-size: 24px;
+
+#puzzle {
+  @include app-bg;
+  height: 100%;
+
+  .upper {
+    @include display-box-justify;
+    height: 50px;
+
+    .icon-left-arrow {
+      margin-left: 20px
+    }
+
+    .time {
+      width: 25%;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: 15px;
+      margin-bottom: -5px;
+
+      .icon-clock {
+        margin-bottom: -2px;
+        margin-right: 3px;
+      }
+    }
+  }
+
+  .middle {
+    @include display-box-center;
+
+    .puzzle-wrapper {
+      @include clearfix;
+      @include single-transition(transform, 1s, linear);
+      width: $puzzle-wrapper-width;
+
+      &.cleared {
+        @include scale(0.7);
+      }
+
+      .flame {
+        @include display-box-center;
+        float       : left;
+        border      : solid $puzzle-border-width;
+        width       : $puzzle-flame-size;
+        height      : $puzzle-flame-size;
+        font-size   : $puzzle-number-size;
+        line-height : $puzzle-number-size;
+        text-align  : center;
+
+        &.right-border-none {
+          border-right: none;
+        }
+        &.bottom-border-none {
+          border-bottom: none;
+        }
+        &.top-border-bold {
+          border-top-width: $puzzle-border-width-bold;
+        }
+        &.bottom-border-bold {
+          border-bottom-width: $puzzle-border-width-bold;
+        }
+        &.right-border-bold {
+          border-right-width: $puzzle-border-width-bold;
+        }
+        &.left-border-bold {
+          border-left-width: $puzzle-border-width-bold;
+        }
+      }
+    }
+
+  }
+
+  .lower {
+    @include display-box-center;
+    margin-top: 20px;
+
+    .btn {
+      display: inline-block;
+      text-align: center;
+      font-size   : $puzzle-number-size;
+      font-weight: bold;
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

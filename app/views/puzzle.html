@@ -1,0 +1,35 @@
+<div id="puzzle">
+  <div class="upper">
+    <div class="icon-left-arrow" v-touch="tap: backList"></div>
+    <div class="time">
+      <div class="icon-clock"></div>
+      {{seconds}}
+    </div>
+  </div>
+
+  <div class="middle">
+    <div class="puzzle-wrapper" v-class="cleared: clearedNow">
+      <div class="flame"
+        v-repeat="flames"
+        v-touch="tap: selectFlame($index)"
+        v-style="
+          background-color: bgColor,
+          font-weight: fontWeight
+        "
+        v-class="
+          right-border-none  : !checkIfMultipleOf(9, $index+1),
+          bottom-border-none : !checkIfLastColumn($index),
+          top-border-bold    : topBorderBold($index),
+          bottom-border-bold : checkIfLastColumn($index),
+          right-border-bold  : checkIfMultipleOf(9, $index+1),
+          left-border-bold   : checkIfMultipleOf(3, $index)
+          ">{{number | stringifyPuzzleNumber}}</div>
+    </div>
+  </div>
+
+  <div class="lower" v-show="!clearedNow">
+    <div class="btn" v-repeat="btnHighers" v-touch="tap: setNumber($value)">{{$value | stringifyBtnNumber}}</div>
+    <br/>
+    <div class="btn" v-repeat="btnLowers" v-touch="tap: setNumber($value)">{{$value | stringifyBtnNumber}}</div>
+  </div>
+</div>
